@@ -1,11 +1,8 @@
 <div class="MovieList">
   <app-movie-card
-    *ngFor="let movie of movieList"
-    [title]="movie.title"
-    [poster]="movie.poster"
-    [year]="movie.year"
-    [duration]="movie.duration"
-    [genre]="movie.genre"
-    [plot]="movie.plot"
+    *ngFor="let movie of movieList; let i = index"
+    [movie]="movie"
+    [index]="i"
+    (onDelete)="handleDeleteMovie($event)"
   ></app-movie-card>
 </div>

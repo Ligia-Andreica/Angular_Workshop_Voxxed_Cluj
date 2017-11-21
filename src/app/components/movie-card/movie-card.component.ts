@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-movie-card',
@@ -6,13 +6,11 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./movie-card.component.css']
 })
 export class MovieCardComponent implements OnInit {
-  rating;
-  @Input() title;
-  @Input() year;
-  @Input() duration;
-  @Input() genre;
-  @Input() plot;
-  @Input() poster;
+  private rating;
+  @Input() movie;
+  @Input() index;
+  @Output() onDelete = new EventEmitter();
+
   constructor() { }
 
   ngOnInit() {
@@ -22,4 +20,7 @@ export class MovieCardComponent implements OnInit {
     this.rating = index;
   }
 
+  deleteMovie() {
+    this.onDelete.emit(this.index);
+  }
 }

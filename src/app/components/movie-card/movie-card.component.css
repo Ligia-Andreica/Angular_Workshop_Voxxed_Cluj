@@ -35,3 +35,8 @@
 .poster-placeholder i{
   font-size: 60px;
 }
+
+.MovieCard-Actions {
+  margin-top: 10px;
+  text-align: right;
+}

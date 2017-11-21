@@ -1,8 +1,8 @@
 <div class="MovieCard card">
   <div class="card-content row">
     <div class="col s4">
-      <img [src]="poster" *ngIf="poster">
-      <div class="poster-placeholder valign-wrapper centered" *ngIf="!poster">
+      <img [src]="movie.poster" *ngIf="movie.poster">
+      <div class="poster-placeholder valign-wrapper centered" *ngIf="!movie.poster">
         <i class="material-icons">theaters</i>
       </div>
       <app-rating
@@ -12,15 +12,21 @@
     </div>
     <div class="col s8">
       <div class="MovieCard-Title">
-        {{title}}
-        <span>({{year}})</span>
+        {{movie.title}}
+        <span>({{movie.year}})</span>
       </div>
       <div class="MovieCard-Details">
-        {{duration}} | {{genre}}
+        {{movie.duration}} | {{movie.genre}}
       </div>
       <hr>
       <div class="MovieCard-Plot">
-        {{plot}}
+        {{movie.plot}}
+      </div>
+      <div class="MovieCard-Actions">
+        <button class="btn red darken-1 waves-light waves-effect " name="action" (click)="deleteMovie()">
+          Delete
+          <i class="material-icons right">delete</i>
+        </button>
       </div>
     </div>
   </div>

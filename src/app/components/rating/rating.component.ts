@@ -6,7 +6,8 @@ import { Component, OnInit, OnChanges, Input, Output, EventEmitter } from '@angu
   styleUrls: ['./rating.component.css']
 })
 export class RatingComponent implements OnInit, OnChanges {
-  ratings = [ false, false, false, false, false ];
+  private ratings = [ false, false, false, false, false ];
+
   @Input() rating;
   @Output() onChangeRating = new EventEmitter();
 
