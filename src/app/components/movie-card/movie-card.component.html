@@ -1,0 +1,27 @@
+<div class="MovieCard card">
+  <div class="card-content row">
+    <div class="col s4">
+      <img [src]="poster" *ngIf="poster">
+      <div class="poster-placeholder valign-wrapper centered" *ngIf="!poster">
+        <i class="material-icons">theaters</i>
+      </div>
+      <app-rating
+        [rating]="rating"
+        (onChangeRating)="handleRatingChange($event)"
+      ></app-rating>
+    </div>
+    <div class="col s8">
+      <div class="MovieCard-Title">
+        {{title}}
+        <span>({{year}})</span>
+      </div>
+      <div class="MovieCard-Details">
+        {{duration}} | {{genre}}
+      </div>
+      <hr>
+      <div class="MovieCard-Plot">
+        {{plot}}
+      </div>
+    </div>
+  </div>
+</div>

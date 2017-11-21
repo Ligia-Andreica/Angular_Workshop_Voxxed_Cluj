@@ -1,0 +1,7 @@
+.Rating-Star {
+  cursor: pointer;
+}
+
+.Rating-Star--colored{
+  color: #ee6e73;
+}

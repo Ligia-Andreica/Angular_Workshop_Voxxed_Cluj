@@ -1,0 +1,37 @@
+.MovieCard {
+  width: 550px;
+  min-height: 350px;
+}
+
+.MovieCard img {
+  width:100%;
+}
+
+.MovieCard-Title {
+  font-size: 30px;
+}
+
+.MovieCard-Title span{
+  font-size: 14px;
+}
+
+.MovieCard-Details {
+  font-size: 12px;
+}
+
+.MovieCard-Plot {
+  margin-top: 20px;
+  font-size: 13px;
+}
+
+.poster-placeholder {
+  width: 129px;
+  height:191px;
+  border: 1px solid lightgray;
+  justify-content: center;
+  color: lightgray;
+}
+
+.poster-placeholder i{
+  font-size: 60px;
+}
