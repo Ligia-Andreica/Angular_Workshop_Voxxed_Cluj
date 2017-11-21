@@ -15,7 +15,8 @@ import { DetailsComponent } from './details.component';
     {
       path: ':id',
       component: DetailsComponent,
-    }])
+    }]),
+    FormsModule
   ],
   declarations: [ DetailsComponent ],
   exports: [ RouterModule ]

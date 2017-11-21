@@ -1,3 +1,35 @@
-<div>
-  <a class="waves-effect waves-light btn" routerLink="/">Cancel</a>
+<div class="Details">
+  <div class="Details-Form row">
+    <form movieForm="ngForm" (ngSubmit)="submitForm()" class="col s9">
+      <div class="row">
+        <div class="input-field col s12">
+          <input placeholder="Insert movie title" id="movie_title" type="text" name="title" [(ngModel)]="movieForm.title">
+          <label class="active" for="movie_title">Movie title</label>
+        </div>
+        <div class="input-field col s6">
+          <input placeholder="Insert movie year" id="movie_year" type="number" name="year" [(ngModel)]="movieForm.year">
+          <label class="active" for="movie_year">Movie release year</label>
+        </div>
+        <div class="input-field col s6">
+          <input placeholder="Insert movie duration" id="movie_duration" type="text" name="duration" [(ngModel)]="movieForm.duration">
+          <label class="active" for="movie_duration">Movie duration</label>
+        </div>
+        <div class="input-field col s12">
+          <input placeholder="Insert movie genre" id="movie_genre" type="text" name="genre" [(ngModel)]="movieForm.genre">
+          <label class="active" for="movie_genre">Movie genre</label>
+        </div>
+        <div class="input-field col s12">
+          <textarea id="movie_plot" placeholder="Insert movie plot" class="materialize-textarea" name="plot" [(ngModel)]="movieForm.plot"></textarea>
+        </div>
+      </div>
+      <button class="btn waves-effect waves-light" type="submit">
+        Save
+      </button>
+      <a class="waves-effect waves-light btn" routerLink="/">Cancel</a>
+    </form>
+    <div class="col s3">
+      <img [src]="movieForm.poster" *ngIf="movieForm.poster">
+    </div>
+  </div>
 </div>
+

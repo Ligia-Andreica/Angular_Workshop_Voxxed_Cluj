@@ -6,9 +6,9 @@
         <i class="material-icons">theaters</i>
       </div>
       <app-rating
-        [rating]="rating"
-        (onChangeRating)="handleRatingChange($event)"
-      ></app-rating>
+      [rating]="rating"
+      (onChangeRating)="handleRatingChange($event)"
+  ></app-rating>
     </div>
     <div class="col s8">
       <div class="MovieCard-Title">
@@ -23,6 +23,7 @@
         {{movie.plot}}
       </div>
       <div class="MovieCard-Actions">
+        <a class="blue waves-effect waves-light btn" [routerLink]="getEditRoute()">edit</a>
         <button class="btn red darken-1 waves-light waves-effect " name="action" (click)="deleteMovie()">
           Delete
           <i class="material-icons right">delete</i>
