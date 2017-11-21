@@ -26,12 +26,19 @@ export class DetailsComponent implements OnInit {
       }
     }
 
-    submitForm() {
-      if (this.movieId === undefined) {
-        this.movieService.addMovie(this.movieForm);
-      } else {
-        this.movieService.updateMovie(this.movieId, this.movieForm);
-      }
-      this.router.navigate(['/']);
+  submitForm() {
+    if (this.movieId === undefined) {
+      this.movieService.addMovie(this.movieForm);
+    } else {
+      this.movieService.updateMovie(this.movieId, this.movieForm);
     }
+    this.router.navigate(['/']);
+  }
+
+  imdbLookup() {
+    this.movieService.searchImdb(this.imdbId)
+      .subscribe(movieResponse => {
+        this.movieForm = Movie.parseMovie(movieResponse);
+      });
+  }
 }

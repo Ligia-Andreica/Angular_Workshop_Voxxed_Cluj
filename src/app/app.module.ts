@@ -10,6 +10,9 @@ import { RatingComponent } from './components/rating/rating.component';
 import { MoviesService } from './services/movies.service';
 import { HomeComponent } from './pages/home/home.component';
 
+import { HttpClientModule } from '@angular/common/http';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,6 +23,7 @@ import { HomeComponent } from './pages/home/home.component';
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     RouterModule.forRoot([
       {
         path: '',

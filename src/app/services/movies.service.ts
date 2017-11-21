@@ -30,8 +30,7 @@ export class MoviesService {
       'As corruption grows in 1950s LA, three policemen - one strait-laced, one brutal, and one sleazy - investigate a series of murders with their own brand of justice.',
       'https://images-na.ssl-images-amazon.com/images/M/MV5BMDBlYzAwZDktNzM2MS00YzBlLWI4ODQtZTlkNmMxZDc3NGRkXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_SX300.jpg')
   ];
-
-  constructor() { }
+  constructor(private http: HttpClient) { }
 
   getMovies(): Movie[] {
     return this.movies;
@@ -51,5 +50,10 @@ export class MoviesService {
 
   updateMovie(index, newMovie): void {
     this.movies[index] = newMovie;
+  }
+
+  searchImdb(id) {
+    return this.http
+      .get(`http://www.theimdbapi.org/api/movie?movie_id=${id}`);
   }
 }
